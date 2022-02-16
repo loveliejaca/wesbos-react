@@ -26,15 +26,15 @@
 
 .count-enter
   transition all .25s
-  transform translateY(100%) // start off screen
+  transform translateY(100%)
   &.count-enter-active
-    transform translateY(0) // put it in it's normal resting spot
+    transform translateY(0)
 
 .count-exit
   transition all .25s
   position absolute
   left 0
   bottom 0
-  transform translateY(0) // start it where it is
+  transform translateY(0)
   &.count-exit-active
-    transform translateY(-100%) // start it where it is
+    transform translateY(-100%)

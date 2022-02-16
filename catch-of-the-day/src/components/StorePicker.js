@@ -1,15 +1,13 @@
 import React, { useRef } from "react";
+import PropTypes from "prop-types";
 import { getFunName } from "../helpers";
 
 const StorePicker = props => {
   const myInput = useRef('');
 
-  function goToStore(e) {
-    // 1. Stop the form from submitting
+  const goToStore = (e) => {
     e.preventDefault();
-    // 2. get the text from that input
     const storeName = myInput.current.value;
-    // 3. Change the page to /store/whatever-they-entered
     props.history.push(`/store/${storeName}`);
   }
 
@@ -27,5 +25,10 @@ const StorePicker = props => {
     </form>
   );
 }
+
+StorePicker.propTypes = {
+  history: PropTypes.object,
+}
+
 
 export default StorePicker;
